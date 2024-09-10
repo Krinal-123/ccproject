@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CottageCareLakeNormanLiveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdditionalRoom">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdditionalRoomMasterID" Type="Int64" />
+    <Property Name="PlanID" Type="Int64" Nullable="false" />
+    <Property Name="RoomDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomPrice" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtherRoom">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OtherRoomsMasterID" Type="Int64" />
+    <Property Name="RoomName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomPrice" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="CompanyID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CottageCareLakeNormanLiveEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdditionalRooms" EntityType="Self.AdditionalRoom" />
+    <EntitySet Name="OtherRooms" EntityType="Self.OtherRoom" />
+  </EntityContainer>
+</Schema>

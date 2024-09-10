@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CottageCareMasterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GUID" Type="Guid" Nullable="false" />
+    <Property Name="DatabaseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BusinessName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Timezone" Type="Int64" />
+    <Property Name="AllowedIp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company1" Relationship="Self.FK_Company_Company" FromRole="Company" ToRole="Company1" />
+    <NavigationProperty Name="Company2" Relationship="Self.FK_Company_Company" FromRole="Company1" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK_Company_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Company1" Type="Self.Company" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Company1">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CottageCareMasterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <AssociationSet Name="FK_Company_Company" Association="Self.FK_Company_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Company1" EntitySet="Companies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

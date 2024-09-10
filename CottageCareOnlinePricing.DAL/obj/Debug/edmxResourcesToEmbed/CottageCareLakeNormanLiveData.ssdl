@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CottageCareLakeNormanLiveModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdditionalRoom">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdditionalRoomMasterID" Type="bigint" />
+    <Property Name="PlanID" Type="bigint" Nullable="false" />
+    <Property Name="RoomDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RoomPrice" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtherRooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OtherRoomsMasterID" Type="bigint" />
+    <Property Name="RoomName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RoomPrice" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CottageCareLakeNormanLiveModelStoreContainer">
+    <EntitySet Name="AdditionalRoom" EntityType="Self.AdditionalRoom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtherRooms" EntityType="Self.OtherRooms" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CottageCareOnlinePricingModelStoreContainer" CdmEntityContainer="CottageCareOnlinePricingEntities">
+    <EntitySetMapping Name="CleaningAppointments">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.CleaningAppointment">
+        <MappingFragment StoreEntitySet="CleaningAppointment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GuestUserId" ColumnName="GuestUserId" />
+          <ScalarProperty Name="PrefferedDate1" ColumnName="PrefferedDate1" />
+          <ScalarProperty Name="PrefferedDate2" ColumnName="PrefferedDate2" />
+          <ScalarProperty Name="PrefferedDate3" ColumnName="PrefferedDate3" />
+          <ScalarProperty Name="IsSoonestAvailable" ColumnName="IsSoonestAvailable" />
+          <ScalarProperty Name="PrefferedTime" ColumnName="PrefferedTime" />
+          <ScalarProperty Name="MethodOfEntry" ColumnName="MethodOfEntry" />
+          <ScalarProperty Name="IsFlexibleScheduling" ColumnName="IsFlexibleScheduling" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FloorTypes">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.FloorType">
+        <MappingFragment StoreEntitySet="FloorTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FloorTypeName" ColumnName="FloorTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostalCodes">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.PostalCode">
+        <MappingFragment StoreEntitySet="PostalCode">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="TaxRate1" ColumnName="TaxRate1" />
+          <ScalarProperty Name="TaxRate2" ColumnName="TaxRate2" />
+          <ScalarProperty Name="TaxRate3" ColumnName="TaxRate3" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="AdditionalMilage" ColumnName="AdditionalMilage" />
+          <ScalarProperty Name="AdditionalMilageAmount" ColumnName="AdditionalMilageAmount" />
+          <ScalarProperty Name="ServiceCenter" ColumnName="ServiceCenter" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteDetails">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.QuoteDetail">
+        <MappingFragment StoreEntitySet="QuoteDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GuestUserId" ColumnName="GuestUserId" />
+          <ScalarProperty Name="QuoteId" ColumnName="QuoteId" />
+          <ScalarProperty Name="CleaningFrequency" ColumnName="CleaningFrequency" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotes">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.Quote">
+        <MappingFragment StoreEntitySet="Quotes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GuestUserId" ColumnName="GuestUserId" />
+          <ScalarProperty Name="SelectedCleaningFrequency" ColumnName="SelectedCleaningFrequency" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.Room">
+        <MappingFragment StoreEntitySet="Rooms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GuestUserId" ColumnName="GuestUserId" />
+          <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+          <ScalarProperty Name="FloorTypeId" ColumnName="FloorTypeId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DampMoppedQuantity" ColumnName="DampMoppedQuantity" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomTypes">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.RoomType">
+        <MappingFragment StoreEntitySet="RoomTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoomTypeName" ColumnName="RoomTypeName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonServiceablePostalCodes">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.NonServiceablePostalCode">
+        <MappingFragment StoreEntitySet="NonServiceablePostalCodes">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuestUsers">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.GuestUser">
+        <MappingFragment StoreEntitySet="GuestUsers">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="HasLaundryRoom" ColumnName="HasLaundryRoom" />
+          <ScalarProperty Name="HasKitchenNook" ColumnName="HasKitchenNook" />
+          <ScalarProperty Name="HasKitchen" ColumnName="HasKitchen" />
+          <ScalarProperty Name="HalfBathCount" ColumnName="HalfBathCount" />
+          <ScalarProperty Name="FullBathCount" ColumnName="FullBathCount" />
+          <ScalarProperty Name="MasterBathCount" ColumnName="MasterBathCount" />
+          <ScalarProperty Name="CleaningFrequency" ColumnName="CleaningFrequency" />
+          <ScalarProperty Name="NumberOfDogs" ColumnName="NumberOfDogs" />
+          <ScalarProperty Name="NumberOfCats" ColumnName="NumberOfCats" />
+          <ScalarProperty Name="NumberOfChildren" ColumnName="NumberOfChildren" />
+          <ScalarProperty Name="NumberOfAdults" ColumnName="NumberOfAdults" />
+          <ScalarProperty Name="OtherCleaningServicesUsed" ColumnName="OtherCleaningServicesUsed" />
+          <ScalarProperty Name="TotalSquareFootage" ColumnName="TotalSquareFootage" />
+          <ScalarProperty Name="HeardAboutUs" ColumnName="HeardAboutUs" />
+          <ScalarProperty Name="CallServiceCenter" ColumnName="CallServiceCenter" />
+          <ScalarProperty Name="IsExistingCustomer" ColumnName="IsExistingCustomer" />
+          <ScalarProperty Name="PreferredContactMethod" ColumnName="PreferredContactMethod" />
+          <ScalarProperty Name="StateProvince" ColumnName="StateProvince" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="AlternateContact" ColumnName="AlternateContact" />
+          <ScalarProperty Name="PrimaryContact" ColumnName="PrimaryContact" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="ReceivePromotions" ColumnName="ReceivePromotions" />
+          <ScalarProperty Name="ViewedDocument" ColumnName="ViewedDocument" />
+          <ScalarProperty Name="ViewedVideo" ColumnName="ViewedVideo" />
+          <ScalarProperty Name="CleanType" ColumnName="CleanType" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReasonsMasters">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.ReasonsMaster">
+        <MappingFragment StoreEntitySet="ReasonsMaster">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ReasonType" ColumnName="ReasonType" />
+          <ScalarProperty Name="ReasonName" ColumnName="ReasonName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplates">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.EmailTemplate">
+        <MappingFragment StoreEntitySet="EmailTemplates">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmailBody" ColumnName="EmailBody" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="TemplateTitle" ColumnName="TemplateTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdditionalRoomsDetails">
+      <EntityTypeMapping TypeName="CottageCareOnlinePricingModel.AdditionalRoomsDetail">
+        <MappingFragment StoreEntitySet="AdditionalRoomsDetails">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="DampMoppedQuantity" ColumnName="DampMoppedQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="AdditionalRoomName" ColumnName="AdditionalRoomName" />
+          <ScalarProperty Name="FloorTypeName" ColumnName="FloorTypeName" />
+          <ScalarProperty Name="FloorTypeId" ColumnName="FloorTypeId" />
+          <ScalarProperty Name="GuestUserId" ColumnName="GuestUserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

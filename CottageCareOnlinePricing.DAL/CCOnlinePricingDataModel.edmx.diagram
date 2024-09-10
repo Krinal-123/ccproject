@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ced992b7a2ee4525991ce7cc387ec183" Name="Diagram1">
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.AdditionalRoomsDetail" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.CleaningAppointment" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.EmailTemplate" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.FloorType" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.GuestUser" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.PostalCode" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.QuoteDetail" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.Quote" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.ReasonsMaster" Width="1.5" PointX="8.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.Room" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.RoomType" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FK_AdditionalRooms_GuestUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FK_CleaningAppointment_GuestUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FloorTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.CompanyId" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FK_QuoteDetails_GuestUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FK_Quotes_GuestUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FK_Rooms_GuestUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FK_QuoteDetails_Quotes" ManuallyRouted="false" />
+        <AssociationConnector Association="CottageCareOnlinePricingModel.FK_Rooms_RoomTypes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CottageCareOnlinePricingModel.NonServiceablePostalCode" Width="1.5" PointX="8.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CottageCareDenverSEModelStoreContainer" CdmEntityContainer="CottageCareDenverSEEntities">
+    <EntitySetMapping Name="AdditionalRooms">
+      <EntityTypeMapping TypeName="CottageCareDenverSEModel.AdditionalRoom">
+        <MappingFragment StoreEntitySet="AdditionalRoom">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdditionalRoomMasterID" ColumnName="AdditionalRoomMasterID" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="RoomDescription" ColumnName="RoomDescription" />
+          <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtherRooms">
+      <EntityTypeMapping TypeName="CottageCareDenverSEModel.OtherRoom">
+        <MappingFragment StoreEntitySet="OtherRooms">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OtherRoomsMasterID" ColumnName="OtherRoomsMasterID" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

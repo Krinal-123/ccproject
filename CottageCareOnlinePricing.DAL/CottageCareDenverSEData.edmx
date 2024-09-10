@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CottageCareDenverSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdditionalRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdditionalRoomMasterID" Type="bigint" />
+          <Property Name="PlanID" Type="bigint" Nullable="false" />
+          <Property Name="RoomDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RoomPrice" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherRooms">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OtherRoomsMasterID" Type="bigint" />
+          <Property Name="RoomName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RoomPrice" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CottageCareDenverSEModelStoreContainer">
+          <EntitySet Name="AdditionalRoom" EntityType="Self.AdditionalRoom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherRooms" EntityType="Self.OtherRooms" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CottageCareDenverSEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdditionalRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdditionalRoomMasterID" Type="Int64" />
+          <Property Name="PlanID" Type="Int64" Nullable="false" />
+          <Property Name="RoomDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoomPrice" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OtherRoomsMasterID" Type="Int64" />
+          <Property Name="RoomName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoomPrice" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="CompanyID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CottageCareDenverSEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdditionalRooms" EntityType="Self.AdditionalRoom" />
+          <EntitySet Name="OtherRooms" EntityType="Self.OtherRoom" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CottageCareDenverSEModelStoreContainer" CdmEntityContainer="CottageCareDenverSEEntities">
+          <EntitySetMapping Name="AdditionalRooms">
+            <EntityTypeMapping TypeName="CottageCareDenverSEModel.AdditionalRoom">
+              <MappingFragment StoreEntitySet="AdditionalRoom">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdditionalRoomMasterID" ColumnName="AdditionalRoomMasterID" />
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="RoomDescription" ColumnName="RoomDescription" />
+                <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherRooms">
+            <EntityTypeMapping TypeName="CottageCareDenverSEModel.OtherRoom">
+              <MappingFragment StoreEntitySet="OtherRooms">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OtherRoomsMasterID" ColumnName="OtherRoomsMasterID" />
+                <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+                <ScalarProperty Name="RoomPrice" ColumnName="RoomPrice" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

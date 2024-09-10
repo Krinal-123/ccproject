@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CottageCareOnlinePricingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdditionalRoomsDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestUserId" Type="bigint" Nullable="false" />
+    <Property Name="FloorTypeId" Type="bigint" Nullable="false" />
+    <Property Name="FloorTypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdditionalRoomMasterID" Type="bigint" Nullable="false" />
+    <Property Name="AdditionalRoomName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="DampMoppedQuantity" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CleaningAppointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestUserId" Type="bigint" Nullable="false" />
+    <Property Name="PrefferedDate1" Type="datetime" />
+    <Property Name="PrefferedDate2" Type="datetime" />
+    <Property Name="PrefferedDate3" Type="datetime" />
+    <Property Name="IsSoonestAvailable" Type="bit" />
+    <Property Name="PrefferedTime" Type="bit" Nullable="false" />
+    <Property Name="MethodOfEntry" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsFlexibleScheduling" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmailTemplates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateTitle" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="EmailSubject" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="EmailBody" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FloorTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FloorTypeName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GuestUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SessionId" Type="nvarchar(max)" />
+    <Property Name="CompanyId" Type="bigint" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CleanType" Type="nvarchar(max)" />
+    <Property Name="ViewedVideo" Type="bit" />
+    <Property Name="ViewedDocument" Type="bit" />
+    <Property Name="ReceivePromotions" Type="bit" />
+    <Property Name="Salutation" Type="nvarchar" MaxLength="20" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrimaryContact" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AlternateContact" Type="nvarchar" MaxLength="20" />
+    <Property Name="Country" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="StateProvince" Type="nvarchar(max)" />
+    <Property Name="PreferredContactMethod" Type="nvarchar(max)" />
+    <Property Name="IsExistingCustomer" Type="bit" Nullable="false" />
+    <Property Name="CallServiceCenter" Type="bit" />
+    <Property Name="HeardAboutUs" Type="nvarchar(max)" />
+    <Property Name="TotalSquareFootage" Type="nvarchar(max)" />
+    <Property Name="OtherCleaningServicesUsed" Type="nvarchar(max)" />
+    <Property Name="NumberOfAdults" Type="int" />
+    <Property Name="NumberOfChildren" Type="int" />
+    <Property Name="NumberOfCats" Type="int" />
+    <Property Name="NumberOfDogs" Type="int" />
+    <Property Name="CleaningFrequency" Type="nvarchar(max)" />
+    <Property Name="MasterBathCount" Type="int" />
+    <Property Name="FullBathCount" Type="int" />
+    <Property Name="HalfBathCount" Type="int" />
+    <Property Name="HasKitchen" Type="bit" />
+    <Property Name="HasKitchenNook" Type="bit" />
+    <Property Name="HasLaundryRoom" Type="bit" />
+    <Property Name="IPAddress" Type="nvarchar(max)" />
+    <Property Name="DeviceType" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NonServiceablePostalCodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PostalCode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaxRate1" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="TaxRate2" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="TaxRate3" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="Service" Type="bit" />
+    <Property Name="AdditionalMilage" Type="bit" />
+    <Property Name="AdditionalMilageAmount" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="ServiceCenter" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="CompanyID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestUserId" Type="bigint" Nullable="false" />
+    <Property Name="QuoteId" Type="bigint" Nullable="false" />
+    <Property Name="CleaningFrequency" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Quotes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestUserId" Type="bigint" Nullable="false" />
+    <Property Name="SelectedCleaningFrequency" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReasonsMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReasonName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReasonType" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestUserId" Type="bigint" Nullable="false" />
+    <Property Name="RoomTypeId" Type="bigint" Nullable="false" />
+    <Property Name="FloorTypeId" Type="bigint" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="DampMoppedQuantity" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RoomTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomTypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CompanyId">
+    <End Role="GuestUsers" Type="Self.GuestUsers" Multiplicity="1" />
+    <End Role="GuestUsers1" Type="Self.GuestUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GuestUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GuestUsers1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdditionalRooms_GuestUsers">
+    <End Role="GuestUsers" Type="Self.GuestUsers" Multiplicity="1" />
+    <End Role="AdditionalRoomsDetails" Type="Self.AdditionalRoomsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuestUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdditionalRoomsDetails">
+        <PropertyRef Name="GuestUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CleaningAppointment_GuestUsers">
+    <End Role="GuestUsers" Type="Self.GuestUsers" Multiplicity="1" />
+    <End Role="CleaningAppointment" Type="Self.CleaningAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuestUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CleaningAppointment">
+        <PropertyRef Name="GuestUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteDetails_GuestUsers">
+    <End Role="GuestUsers" Type="Self.GuestUsers" Multiplicity="1" />
+    <End Role="QuoteDetails" Type="Self.QuoteDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuestUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuoteDetails">
+        <PropertyRef Name="GuestUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteDetails_Quotes">
+    <End Role="Quotes" Type="Self.Quotes" Multiplicity="1" />
+    <End Role="QuoteDetails" Type="Self.QuoteDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quotes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuoteDetails">
+        <PropertyRef Name="QuoteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quotes_GuestUsers">
+    <End Role="GuestUsers" Type="Self.GuestUsers" Multiplicity="1" />
+    <End Role="Quotes" Type="Self.Quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuestUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quotes">
+        <PropertyRef Name="GuestUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rooms_GuestUsers">
+    <End Role="GuestUsers" Type="Self.GuestUsers" Multiplicity="1" />
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuestUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rooms">
+        <PropertyRef Name="GuestUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rooms_RoomTypes">
+    <End Role="RoomTypes" Type="Self.RoomTypes" Multiplicity="1" />
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rooms">
+        <PropertyRef Name="RoomTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FloorTypeId">
+    <End Role="FloorTypes" Type="Self.FloorTypes" Multiplicity="1" />
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FloorTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rooms">
+        <PropertyRef Name="FloorTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CottageCareOnlinePricingModelStoreContainer">
+    <EntitySet Name="AdditionalRoomsDetails" EntityType="Self.AdditionalRoomsDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CleaningAppointment" EntityType="Self.CleaningAppointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailTemplates" EntityType="Self.EmailTemplates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FloorTypes" EntityType="Self.FloorTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuestUsers" EntityType="Self.GuestUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NonServiceablePostalCodes" EntityType="Self.NonServiceablePostalCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PostalCode" EntityType="Self.PostalCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuoteDetails" EntityType="Self.QuoteDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quotes" EntityType="Self.Quotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReasonsMaster" EntityType="Self.ReasonsMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomTypes" EntityType="Self.RoomTypes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="CompanyId" Association="Self.CompanyId">
+      <End Role="GuestUsers" EntitySet="GuestUsers" />
+      <End Role="GuestUsers1" EntitySet="GuestUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdditionalRooms_GuestUsers" Association="Self.FK_AdditionalRooms_GuestUsers">
+      <End Role="GuestUsers" EntitySet="GuestUsers" />
+      <End Role="AdditionalRoomsDetails" EntitySet="AdditionalRoomsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CleaningAppointment_GuestUsers" Association="Self.FK_CleaningAppointment_GuestUsers">
+      <End Role="GuestUsers" EntitySet="GuestUsers" />
+      <End Role="CleaningAppointment" EntitySet="CleaningAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteDetails_GuestUsers" Association="Self.FK_QuoteDetails_GuestUsers">
+      <End Role="GuestUsers" EntitySet="GuestUsers" />
+      <End Role="QuoteDetails" EntitySet="QuoteDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteDetails_Quotes" Association="Self.FK_QuoteDetails_Quotes">
+      <End Role="Quotes" EntitySet="Quotes" />
+      <End Role="QuoteDetails" EntitySet="QuoteDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quotes_GuestUsers" Association="Self.FK_Quotes_GuestUsers">
+      <End Role="GuestUsers" EntitySet="GuestUsers" />
+      <End Role="Quotes" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rooms_GuestUsers" Association="Self.FK_Rooms_GuestUsers">
+      <End Role="GuestUsers" EntitySet="GuestUsers" />
+      <End Role="Rooms" EntitySet="Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rooms_RoomTypes" Association="Self.FK_Rooms_RoomTypes">
+      <End Role="RoomTypes" EntitySet="RoomTypes" />
+      <End Role="Rooms" EntitySet="Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="FloorTypeId" Association="Self.FloorTypeId">
+      <End Role="FloorTypes" EntitySet="FloorTypes" />
+      <End Role="Rooms" EntitySet="Rooms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
